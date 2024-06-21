@@ -2,9 +2,9 @@
 </script>
 
 <template>
-  <div class="w-min mx-auto">
-    home
-  </div>
+ <div class="w-min mx-auto">
+   about
+ </div>
 </template>
 
 <style scoped>

@@ -5,11 +5,27 @@
 </template>
 
 <script setup lang="ts">
+function capitalize( str: string ) {
+  return str.charAt(0).toUpperCase() + str.slice(1)
+}
+
+function updateHead() {
+  useHead( {
+    title: 'Chirp' + (useRoute().path === '/' ? '' : ' - ' + capitalize(useRoute().path.slice(1))),
+  })
+}
+
 useSeoMeta({
-  title: 'Chirp',
-  ogTitle: 'Chirp',
   description: 'Chirp: Send Anonymous Messages',
   ogDescription: 'Chirp: Send Anonymous Messages'
+})
+
+onMounted(() => {
+  updateHead()
+})
+
+watch(() => useRoute().path, () => {
+  updateHead()
 })
 </script>
 

@@ -5,6 +5,12 @@
 </template>
 
 <script setup lang="ts">
+useSeoMeta({
+  title: 'Chirp',
+  ogTitle: 'Chirp',
+  description: 'Chirp: Send Anonymous Messages',
+  ogDescription: 'Chirp: Send Anonymous Messages'
+})
 </script>
 
 <style>

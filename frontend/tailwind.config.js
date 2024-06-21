@@ -7,6 +7,9 @@ module.exports = {
   prefix: "",
   
   theme: {
+    fontFamily: {
+      sans: ["Inter", "sans-serif" ],
+    },
     container: {
       center: true,
       padding: "2rem",
@@ -14,6 +17,7 @@ module.exports = {
         "2xl": "1400px",
       },
     },
+
     extend: {
       colors: {
         border: "hsl(var(--border))",

@@ -3,6 +3,7 @@ import {
   LogOut,
   Mail,
   Settings,
+  HelpCircle
 } from 'lucide-vue-next'
 
 import { Button } from '@/components/ui/button'
@@ -14,6 +15,8 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
+
+const settingsOpened = inject( 'settingsOpened' )
 </script>
 
 <template>
@@ -33,12 +36,19 @@ import {
         </DropdownMenuItem>
       </router-link>
 
-      <DropdownMenuItem>
+      <DropdownMenuItem @click="settingsOpened = true">
         <Settings class="mr-2 h-4 w-4" />
         <span>Settings</span>
       </DropdownMenuItem>
 
       <DropdownMenuSeparator />
+
+      <router-link to="/about" class="flex items-center w-full">
+        <DropdownMenuItem class="w-full">
+          <HelpCircle class="mr-2 h-4 w-4" />
+          <span>About</span>
+        </DropdownMenuItem>
+      </router-link>
 
       <DropdownMenuItem>
         <LogOut class="mr-2 h-4 w-4" />

@@ -1,20 +1,11 @@
 <script setup lang="ts">
 
-import {Switch} from "~/components/ui/switch";
-import {useDark} from "@vueuse/core";
 import { User2Icon, SearchIcon } from "lucide-vue-next";
+import {provide} from "vue";
 
-const isDark = useDark()
-const themeChecked = ref()
+const settingsOpened = ref(false)
 
-onMounted( () => {
-  themeChecked.value = isDark.value
-})
-
-watch( themeChecked , () => {
-  isDark.value = themeChecked.value
-})
-
+provide('settingsOpened', settingsOpened)
 </script>
 
 <template>
@@ -32,16 +23,17 @@ watch( themeChecked , () => {
     </div>
 
     <div class="flex items-center gap-6">
-      <router-link to="/about" class="hover:underline text-foreground/60 hidden xl:block">About</router-link>
-      <Switch class="hidden xl:block" :checked="themeChecked" @update:checked="themeChecked = $event"/>
 
-      <LoginDialog v-if="themeChecked">
+
+      <LoginDialog>
         <Button>
           sign in
         </Button>
       </LoginDialog>
 
-      <UserDropdown v-else>
+      <SettingsDialog/>
+
+      <UserDropdown>
         <Button variant="secondary" class="rounded-full p-0 size-10">
           <user2-icon/>
         </Button>

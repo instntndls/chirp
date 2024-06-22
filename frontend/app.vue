@@ -32,7 +32,7 @@ watch(() => useRoute().path, () => {
 <style>
 .page-enter-active,
 .page-leave-active {
-  transition: opacity .1s;
+  transition: opacity 0.2s;
 }
 .page-enter-from,
 .page-leave-to {

@@ -5,14 +5,16 @@ import {provide} from "vue";
 
 const settingsOpened = ref(false)
 
+const icon = ref("🐤")
+
 provide('settingsOpened', settingsOpened)
 </script>
 
 <template>
-  <Card class="px-4 w-full h-16 bg-secondary/10 flex gap-4 items-center justify-between rounded-t-none">
-    <router-link class="font-bold flex items-center" to="/">
-      <span class="text-3xl -mt-2">🐥</span>
-      <h1 class="leading-snug text-2xl hidden xl:block">Chirp</h1>
+  <Card class="fixed px-4 z-10 w-full h-16 flex gap-4 items-center justify-between rounded-t-none rounded-b-none sm:rounded-b-lg  xl:rounded-t-none shadow-md">
+    <router-link class="font-extrabold flex items-center" to="/"  @mouseover="icon = '🐣'" @mouseleave="icon = '🐤'">
+      <span class="text-4xl -mt-2">{{ icon }}</span>
+      <h1 class="leading-snug text-3xl hidden xl:block">Chirp</h1>
     </router-link>
 
     <div class="relative w-full sm:w-1/3 max-w-sm items-center">

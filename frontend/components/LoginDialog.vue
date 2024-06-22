@@ -18,7 +18,7 @@ import { ArrowRightIcon } from "lucide-vue-next";
     <DialogTrigger as-child>
       <slot/>
     </DialogTrigger>
-    <DialogContent class="sm:max-w-[320px] h-1/3">
+    <DialogContent class="sm:max-w-[320px]">
       <DialogHeader>
         <DialogTitle>Sign in 🐣</DialogTitle>
       </DialogHeader>
@@ -31,11 +31,26 @@ import { ArrowRightIcon } from "lucide-vue-next";
       <Input type="password" placeholder="Password" class="w-full"/>
 
 
-      <DialogFooter class="pt-4">
-        <Button type="submit" class="w-full">
-          Sign in
-          <ArrowRightIcon class="ml-1 size-4"/>
-        </Button>
+
+      <DialogFooter>
+        <div class="w-full flex flex-col gap-4">
+          <div class="flex  text-sm">
+          <span class="">
+            Don't have an account?
+          </span>
+            <DialogTrigger >
+              <span class="ml-2 hover:underline cursor-pointer text-foreground bg-primary px-1 py-[1px] rounded">
+                Sign up
+              </span>
+            </DialogTrigger>
+          </div>
+
+          <Button type="submit" class="w-full">
+            Sign in
+            <ArrowRightIcon class="ml-1 size-4"/>
+          </Button>
+        </div>
+
       </DialogFooter>
     </DialogContent>
   </Dialog>

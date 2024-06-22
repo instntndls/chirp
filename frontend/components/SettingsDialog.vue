@@ -41,7 +41,7 @@ watch( themeChecked , () => {
 
       <div class="flex gap-2">
         <span> Dark mode: </span>
-        <Switch class="hidden xl:block" :checked="themeChecked" @update:checked="themeChecked = $event"/>
+        <Switch :checked="themeChecked" @update:checked="themeChecked = $event"/>
       </div>
 
       <DialogClose class="ml-auto">

@@ -3,8 +3,8 @@
 </script>
 
 <template>
-  <div class="">
-    inbox
+  <div class="w-full h-36 bg-card">
+    page footer
   </div>
 </template>
 

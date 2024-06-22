@@ -3,10 +3,13 @@
 </script>
 
 <template>
-  <div>
+  <div class="h-full w-full flex flex-col">
     <PageHeader/>
-    <NuxtPage class="mx-auto"/>
+    <div class="w-full h-full mt-16">
+      <NuxtPage class="mx-auto h-full sm:w-[70%] bg-card"/>
+    </div>
   </div>
+
 </template>
 
 <style scoped>
